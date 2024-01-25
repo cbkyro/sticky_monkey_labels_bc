@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ locale_name }}">
+    <head>
+        <title>{{ head.title }}</title>
+        {{{ resourceHints }}}
+        {{{ head.meta_tags }}}
+        {{{ head.config }}}
+        {{#block "head"}} {{/block}}
+
+        <link href="{{ head.favicon }}" rel="shortcut icon">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta charset="UTF-8">
+        <meta name="google-site-verification" content="1uhXA7-jODN5Df8ZYm0g0sACxDqrv0SdDqzoZ4p0110" />
+        <meta name="facebook-domain-verification" content="oljyy35o6j5zzojhdw7gv5b008jl4q" />
+        
+        <script>
+            <!-- Change document class from no-js to js so we can detect this in css -->
+            document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+        </script>
+        {{!-- Load Lazysizes script ASAP so images will appear --}}
+        <script>
+             <!-- Only load visible elements until the onload event fires, after which preload nearby elements. -->
+            window.lazySizesConfig = window.lazySizesConfig || {};
+            window.lazySizesConfig.loadMode = 1;
+        </script>
+        <script async src="{{cdn 'assets/dist/theme-bundle.head_async.js'}}"></script>
+
+        {{ getFontsCollection }}
+        {{{stylesheet '/assets/css/theme.css'}}}
+        {{{stylesheet '/assets/scss/custom.css'}}}
+
+        {{{head.scripts}}}
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+      
+	    
+        {{~inject 'themeSettings' theme_settings}}
+        {{~inject 'genericError' (lang 'common.generic_error')}}
+        {{~inject 'maintenanceMode' settings.maintenance}}
+        {{~inject 'urls' urls}}
+        {{~inject 'secureBaseUrl' settings.secure_base_url}}
+        {{~inject 'cartId' cart_id}}
+        {{~inject 'template' template}}
+        
+        <!-- Search begin -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+        
+        <style>
+        @font-face {
+            font-family: 'Marker';
+            src: url("{{cdn '/fonts/123marker-webfont.eot'}}");
+            src: url("{{cdn '/fonts/123marker-webfont.eot'}}") format('embedded-opentype'),
+                 url("{{cdn '/fonts/123marker-webfont.woff2'}}") format('woff2'),
+                 url("{{cdn '/fonts/123marker-webfont.woff'}}") format('woff'),
+                 url("{{cdn '/fonts/123marker-webfont.ttf'}}") format('truetype'),
+                 url("{{cdn '/fonts/123marker-webfont.svg'}}") format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Rounded';
+            src: url("{{cdn '/fonts/tt0756m-webfont.eot'}}");
+            src: url("{{cdn '/fonts/tt0756m-webfont.eot'}}") format('embedded-opentype'),
+                 url("{{cdn '/fonts/tt0756m-webfont.woff2'}}") format('woff2'),
+                 url("{{cdn '/fonts/tt0756m-webfont.woff'}}") format('woff'),
+                 url("{{cdn '/fonts/tt0756m-webfont.ttf'}}") format('truetype'),
+                 url("{{cdn '/fonts/tt0756m-webfont.svg'}}") format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Blenda';
+            src: url("{{cdn '/fonts/blenda_script_0-webfont.eot'}}");
+            src: url("{{cdn '/fonts/blenda_script_0-webfont.eot'}}") format('embedded-opentype'),
+                 url("{{cdn '/fonts/blenda_script_0-webfont.woff2'}}") format('woff2'),
+                 url("{{cdn '/fonts/blenda_script_0-webfont.woff'}}") format('woff'),
+                 url("{{cdn '/fonts/blenda_script_0-webfont.ttf'}}") format('truetype'),
+                 url("{{cdn '/fonts/blenda_script_0-webfont.svg'}}") format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Bubblegum';
+            src: url("{{cdn '/fonts/bubblegumsans-regular-webfont.eot'}}");
+            src: url("{{cdn '/fonts/bubblegumsans-regular-webfont.eot'}}") format('embedded-opentype'),
+                 url("{{cdn '/fonts/bubblegumsans-regular-webfont.woff2'}}") format('woff2'),
+                 url("{{cdn '/fonts/bubblegumsans-regular-webfont.woff'}}") format('woff'),
+                 url("{{cdn '/fonts/bubblegumsans-regular-webfont.ttf'}}") format('truetype'),
+                 url("{{cdn '/fonts/bubblegumsans-regular-webfont.svg'}}") format('svg');
+            font-weight: normal;
+            font-style: normal;
+        
+        }
+        @font-face {
+            font-family: 'Covington';
+            src: url("{{cdn '/fonts/coving01-webfont.eot'}}");
+            src: url("{{cdn '/fonts/coving01-webfont.eot'}}") format('embedded-opentype'),
+                 url("{{cdn '/fonts/coving01-webfont.woff2'}}") format('woff2'),
+                 url("{{cdn '/fonts/coving01-webfont.woff'}}") format('woff'),
+                 url("{{cdn '/fonts/coving01-webfont.ttf'}}") format('truetype'),
+                 url("{{cdn '/fonts/coving01-webfont.svg'}}") format('svg');
+            font-weight: normal;
+            font-style: normal;
+        
+        }
+        @font-face {
+            font-family: 'FHA Modernized';
+            src: url("{{cdn '/fonts/fhamocan-webfont.eot'}}");
+            src: url("{{cdn '/fonts/fhamocan-webfont.eot'}}") format('embedded-opentype'),
+                 url("{{cdn '/fonts/fhamocan-webfont.woff2'}}") format('woff2'),
+                 url("{{cdn '/fonts/fhamocan-webfont.woff'}}") format('woff'),
+                 url("{{cdn '/fonts/fhamocan-webfont.ttf'}}") format('truetype'),
+                 url("{{cdn '/fonts/fhamocan-webfont.svg'}}") format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'HH Samuel';
+            src: url("{{cdn '/fonts/h.h._samuel-font-defharo-webfont.eot'}}");
+            src: url("{{cdn '/fonts/h.h._samuel-font-defharo-webfont.eot'}}") format('embedded-opentype'),
+                 url("{{cdn '/fonts/h.h._samuel-font-defharo-webfont.woff2'}}") format('woff2'),
+                 url("{{cdn '/fonts/h.h._samuel-font-defharo-webfont.woff'}}") format('woff'),
+                 url("{{cdn '/fonts/h.h._samuel-font-defharo-webfont.ttf'}}") format('truetype'),
+                 url("{{cdn '/fonts/h.h._samuel-font-defharo-webfont.svg'}}") format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'HFF Fourth Rock';
+            src: url("{{cdn '/fonts/hff_fourth_rock-webfont.eot'}}");
+            src: url("{{cdn '/fonts/hff_fourth_rock-webfont.eot'}}") format('embedded-opentype'),
+                 url("{{cdn '/fonts/hff_fourth_rock-webfont.woff2'}}") format('woff2'),
+                 url("{{cdn '/fonts/hff_fourth_rock-webfont.woff'}}") format('woff'),
+                 url("{{cdn '/fonts/hff_fourth_rock-webfont.ttf'}}") format('truetype'),
+                 url("{{cdn '/fonts/hff_fourth_rock-webfont.svg'}}") format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Komika';
+            src: url("{{cdn '/fonts/komtxt_-webfont.eot'}}");
+            src: url("{{cdn '/fonts/komtxt_-webfont.eot'}}") format('embedded-opentype'),
+                 url("{{cdn '/fonts/komtxt_-webfont.woff2'}}") format('woff2'),
+                 url("{{cdn '/fonts/komtxt_-webfont.woff'}}") format('woff'),
+                 url("{{cdn '/fonts/komtxt_-webfont.ttf'}}") format('truetype'),
+                 url("{{cdn '/fonts/komtxt_-webfont.svg'}}") format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Comic Sans';
+            src: url("{{cdn '/fonts/Comic-Sans.eot'}}");
+            src: url("{{cdn '/fonts/Comic-Sans.eot'}}") format('embedded-opentype'),
+                 url("{{cdn '/fonts/Comic-Sans.woff2'}}") format('woff2'),
+                 url("{{cdn '/fonts/Comic-Sans.woff'}}") format('woff'),
+                 url("{{cdn '/fonts/Comic-Sans.ttf'}}") format('truetype'),
+                 url("{{cdn '/fonts/Comic-Sans.svg'}}") format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        </style>
+        <script src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js"></script>
+        
+    </head>
+   
+
+    <body onLoad="myFunction()" class="{{page_type}}">
+        <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T6RRQZRW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+     	<div id="ttloader">
+			<img src="https://cdn11.bigcommerce.com/s-o3nxr557rb/product_images/uploaded_images/icon-loading.png" id="loading" alt="loading"/>
+		</div>
+        
+        <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
+		 {{#if settings.privacy_cookie}}
+            {{> components/common/cookie}}
+        {{/if}}
+        {{> components/common/header }}
+        {{> components/common/body }}
+        <div class="vipMembers" style="display: none;">
+            <p>Sticky Monky Labels</p>
+        </div>
+        {{> components/common/footer }}
+        {{#if page_type '===' 'category'}}
+        <style>
+        .pagination-list {display: none;}
+        .filter-box.tt-bottom { display: none;}
+        </style>
+        {{/if}}
+		<script>
+			var myVar;
+	
+			function myFunction() {
+			myVar = setTimeout(showPage, 150);
+			}
+			function showPage() {
+			  document.getElementById("ttloader").style.display = "none";
+			}
+			
+        </script>
+        
+        
+        <script>window.__webpack_public_path__ = "{{cdn 'assets/dist/'}}";</script>
+        <script src="{{cdn 'assets/dist/theme-bundle.main.js'}}"></script>
+        <script>
+            // Exported in app.js
+            window.stencilBootstrap("{{page_type}}", {{jsContext}}).load();
+        </script>
+
+        {{{footer.scripts}}}
+
+        <script type="text/javascript">
+
+           var cardN
+           $( document ).ready(function() {
+               cardN="Rounded"
+           });
+
+           $('input[type=radio]').change(function() {    
+         
+               cardN =  $("label[data-product-attribute-value='" + $(this).val() +"'] span").prop("title");
+                console.log(cardN);
+               $('.enterdetails span').css("font-family",cardN);
+
+               // $('.enterdetails span').css({ 'display': 'block','width': '100%','text-align': 'center' });
+           });
+
+
+            $(".form-field:contains('Name')").find('input').attr('maxlength','25').on('keyup change paste', function(){
+                var nameInput = $(this).val().trim();
+                //console.log(nameInput);
+                if (nameInput.length > 0){
+                    nameInput = nameInput;
+                }else{
+                    nameInput = 'Name';
+                }
+                $("#enter_name span.name").html(nameInput);
+            });
+           $(".form-field:contains('Phone')").find('input').attr('maxlength','25').on('keyup change paste', function(){
+                
+                //var numberInput = $(this).val().replace(/(\d{3})\-?(\d{3})\-?(\d{4})/,'$1-$2-$3');
+                var numberInput = $(this).val();
+                if (numberInput.length > 0){
+                    $("#enter_name span.phone").html(numberInput);
+                    $('#enter_name span.phone').css({ 'display': 'block' });
+                    //$("#enter_name span.phone").addClass('numberVisible');
+                }else{
+                    numberInput = '';
+                    $('#enter_name span.phone').css({ 'display': 'none' });
+                }
+                // $('#enter_name p').append("<span>" + $(this).val() +"</span>");
+                //    $('.enterdetails span').css("font-family",cardN);
+                //    $('.enterdetails span').css({
+                //                    'display': 'block',
+                //                    'width': '100%',
+                //                    'text-align': 'center'
+                //    });   
+            });
+
+        //   $(document).ready(function() {
+        //         $(".form-field:contains('Phone') input").attr('maxlength','15');
+        //         //$("#enter_name tspan.phoneNumber").attr('maxlength','15');
+        //         $('#vipMembers').on('click',function(){
+        //             $('.vipMembers').show();
+        //             $('main.account').hide();
+        //             $('.account form').hide();
+        //             $('.account .productGrid').hide();
+        //             $('.tt-address .account').hide();
+        //             $('.tt-inbox .account').hide();
+        //             $('.account .wishlists-table').hide();
+        //         });
+        //     });
+        </script>
+        <style type="text/css">
+            .numberVisible { display: block !important; }
+        </style>
+        
+        <!-- START JUDGE.ME FLOATING REVIEW WIDGET -->
+ <section class='jdgm-widget jdgm-revs-tab'>
+  <div class='jdgm-revs-tab-btn btn' position='bottom'>Reviews</div>
+  <div class='jdgm-revs-tab__header'>
+      <a class='jdgm-close-ico'></a>
+      <h3 class='jdgm-revs-tab__title'>Product Reviews</h3>
+      <a class='jdgm-revs-tab__url' href='/pages/reviews'>
+          <div class='jdgm-all-reviews-rating'></div><span class='jdgm-all-reviews-count'></span> reviews
+      </a>
+  </div>
+</section>
+      <!-- END JUDGE.ME FLOATING REVIEW WIDGET -->
+      
+    </body>
+</html>

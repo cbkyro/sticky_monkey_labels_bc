@@ -1,0 +1,164 @@
+<div class="dropdown dropdown--quickSearch desktop" id="quickSearch" aria-hidden="true" tabindex="-1" data-prevent-quick-search-close>
+	<a href="#" class="quickSearch-mobileToggle" title="Submit Search">
+		<span class="mobileMenu-toggleIcon"></span>
+	</a>
+	<form class="form" action="{{urls.search}}">
+	    <!--<div class="search-form-wrapper">-->
+    		<!--<fieldset class="form-fieldset">-->
+    		<!--	<div class="form-field">-->
+    		<!--		<label class="is-srOnly" for="search_query">{{lang "search.quick_search.input_label"}}</label>-->
+    		<!--		<input class="form-input" data-search-quick name="search_query" id="search_query" data-error-message="{{lang 'search.error.empty_field'}}" placeholder="{{lang 'search.quick_search.input_placeholder'}}" autocomplete="off">-->
+    		<!--		 <input class="button button--primary form-prefixPostfix-button--postfix" type="submit" value=""><svg class="header-icon search-icon"><use xlink:href="#icon-search"></use></svg> -->
+    		<!--	</div>-->
+    		<!--</fieldset>-->
+		<!--</div>-->
+		<div class="search-icon submit">
+		    
+		    <!--<a href="#search" class="search-form-tigger btn btn-success"  data-toggle="search-form"><span class="material-icons">search</span></a>-->
+		    <form class="search-form" id="" action="{{urls.search}}">
+              <fieldset class="form-fieldset">
+        		<div class="form-field">
+        		   <!--<div class="flexbox">-->
+             <!--       <div class="search">-->
+             <!--           <input type="text" class="form-input" data-search-quick name="search_query" id="" data-error-message="{{lang 'search.error.empty_field'}}" placeholder="{{lang 'search.quick_search.input_placeholder'}}">-->
+             <!--       </div>-->
+             <!--      </div>-->
+                 <!--<span class="input-group-addon" id="basic-addon2"><i class="fa fa-search" aria-hidden="true"></i>-->
+                 <!--</span>-->
+                 <!-- <span class="input-group-addon search-close" id="basic-addon2"><i class="fa fa-window-close" aria-hidden="true"></i>
+                 </span> --> 
+                     <!-- partial:index.partial.html -->
+                    <div class="flexbox">
+                      <div class="search">
+                        <div>
+                          <input type="text" data-search-quick name="search_query" id="" data-error-message="{{lang 'search.error.empty_field'}}" placeholder="{{lang 'search.quick_search.input_placeholder'}}">
+                        </div>
+                      </div>
+                    </div>
+                    <!-- partial -->
+                </div>
+              </fieldset>
+            </form>
+		    
+		 <!--   <button title="Submit Search" class="button button--primary form-prefixPostfix-button--postfix" type="submit" value="">-->
+			<!--	<span class="material-icons">search</span>-->
+				<!--{{lang "search.quick_search.input_label"}}-->
+			<!--</button>-->
+			
+			<!--<button title="Submit Search" class="button button--primary form-prefixPostfix-button--postfix" type="submit" value="{{lang "search.quick_search.input_label"}}">-->
+			<!--	<span class="material-icons">search</span>-->
+			<!--	{{lang "search.quick_search.input_label"}}-->
+			<!--</button>-->
+			
+		</div>
+	</form>
+	<section class="quickSearchResults" data-bind="html: results"></section>
+</div>
+
+
+<style>
+.flexbox {
+  /*background: linear-gradient(155deg, #55c7ed, #2bb3e0, #3bc1ed);*/
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search {
+  margin: -10px 20px 20px;
+}
+
+.search > div {
+  display: inline-block;
+  position: relative;
+  filter: drop-shadow(0 1px #0091c2);
+}
+
+.search > div:after {
+  content: "";
+  background: white;
+  width: 4px;
+  height: 12px;
+  position: absolute;
+    top: 22px;
+    right: -2px;
+  transform: rotate(135deg);
+}
+
+.search > div > input {
+  color: white;
+  font-size: 16px;
+  background: transparent;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+  border: solid 3px white;
+  outline: none;
+  border-radius: 35px;
+  transition: width 0.5s;
+}
+
+.search > div > input::-moz-placeholder {
+  color: #efefef;
+  opacity: 0;
+  -moz-transition: opacity 150ms ease-out;
+  transition: opacity 150ms ease-out;
+}
+
+.search > div > input:-ms-input-placeholder {
+  color: #efefef;
+  opacity: 0;
+  -ms-transition: opacity 150ms ease-out;
+  transition: opacity 150ms ease-out;
+}
+
+.search > div > input::placeholder {
+  color: #efefef;
+  opacity: 0;
+  transition: opacity 150ms ease-out;
+}
+
+.search > div > input:focus::-moz-placeholder {
+  opacity: 1;
+}
+
+.search > div > input:focus:-ms-input-placeholder {
+  opacity: 1;
+}
+
+.search > div > input:focus::placeholder {
+  opacity: 1;
+}
+
+.search > div > input:not(:-moz-placeholder-shown) {
+  width: 250px;
+}
+
+.search > div > input:not(:-ms-input-placeholder) {
+  width: 250px;
+}
+
+.search > div > input:focus,
+.search > div > input:not(:placeholder-shown) {
+  width: 250px;
+}
+@media(max-width:767px){
+    .search {
+      margin: -5px 0px 20px;
+    }
+}
+
+@media(max-width:991px){
+
+    .search > div > input {
+        background: #39bbc9 !important;
+    }
+    
+    .header-logo>a {
+        z-index: 0;
+    }
+}
+
+</style>

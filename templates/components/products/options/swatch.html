@@ -1,0 +1,304 @@
+<div class="form-field cust_swatchs" data-product-attribute="swatch">
+    <div class="accordion">
+    <label class="form-label form-label--alternate form-label--inlineSmall cust_form_label">
+        {{this.display_name}}:
+        <span data-option-value></span>
+        <span class="selected-lable selected_txt" style="color:#39bbc9"></span>
+        {{#if required}}
+            <small>{{lang 'common.required'}}</small>
+        {{/if}}
+    </label>
+    </div>
+    <ul class="panel">
+        <!-- Test start -->
+    <div class="scrolly">
+         <a href="javascript:void(0)" id="left"><span class="material-icons">chevron_left</span></a>
+        <a href="javascript:void(0)" id="right"><span class="material-icons">chevron_right</span></a>
+        <ul class="carouselPre">
+    {{#each this.values}}
+        <li class="itemsC">
+        <input class="form-radio" type="radio" name="attribute[{{../id}}]" value="{{id}}" id="attribute_swatch_{{../id}}_{{id}}" {{#if selected}}checked data-default{{/if}} {{#if ../required}}required{{/if}}>
+        <label class="form-option form-option-swatch" for="attribute_swatch_{{../id}}_{{id}}" data-product-attribute-value="{{id}}">
+            {{#if image}}
+                <span class='form-option-variant form-option-variant--pattern' title="{{this.label}}" style="background-image: url('{{getImage image "swatch_option_size"}}');"></span>
+            {{/if}}
+            {{#if data.[2]}}
+                    <span class='form-option-variant form-option-variant--color' title="{{this.label}}" style="background-color: #{{data.[0]}}"></span>
+                    <span class='form-option-variant form-option-variant--color' title="{{this.label}}" style="background-color: #{{data.[1]}}"></span>
+                    <span class='form-option-variant form-option-variant--color' title="{{this.label}}" style="background-color: #{{data.[2]}}"></span>
+            {{else}}
+                {{#if data.[1]}}
+                    <span class='form-option-variant form-option-variant--color' title="{{this.label}}" style="background-color: #{{data.[0]}}"></span>
+                    <span class='form-option-variant form-option-variant--color' title="{{this.label}}" style="background-color: #{{data.[1]}}"></span>
+                {{else}}
+                    {{#if data.[0]}}
+                        <span class='form-option-variant form-option-variant--color' title="{{this.label}}" style="background-color: #{{data.[0]}}"></span>
+                    {{/if}}
+                {{/if}}
+            {{/if}}
+            {{#if pattern}}
+                <span class="form-option-expanded">
+                    <span class="form-option-image" style="background-image: url('{{getImage image 'core-swatch'}}');"></span>
+                </span>
+            {{/if}}
+        </label>
+        </li>
+    {{/each}}
+    </ul>
+    </div>
+    </li>
+</div>
+
+<style>
+ :root {
+    --grid-column-gap: 20px;
+}
+
+.carouselPre{
+    grid-auto-flow: column;
+    display: grid;
+    grid-auto-columns: calc((100% - 3 * 10px)/ 12);
+    grid-column-gap: 10px;
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    list-style: none;
+    scroll-behavior: smooth;
+    margin: 15px 40px 0px 45px;
+}
+
+@media (min-width: 1631px) {
+    .carouselPre{
+        grid-auto-columns: calc((100% - 3 * 10px)/ 14);
+    }
+}
+
+
+
+#title{
+    margin: 10px 10px 10px 0;
+    font-size: 34px;
+    font-weight: 600;
+}
+
+.topT{
+    border-top: 1px solid rgb(212, 212, 212);
+    padding: 10px 0;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.itemsC .textDet{
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+    width: 100%;
+    display: flex;
+}
+
+.contents{
+    color: white;
+}
+
+.itemsC .contents p{    
+    -webkit-line-clamp: 3;
+    text-align: center;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    font-size: 12px;
+    line-height: 1.25;
+    font-weight: 400;
+    width: 90%;
+    margin: auto;
+}
+
+.leftTxtDet{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 33px;
+}
+
+.itemsC{
+    position: relative;
+}
+
+.scrolly{
+    overflow: hidden;
+}
+
+.carouselPre li{
+    scroll-snap-align: start;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    list-style: none;
+    border-radius: 0px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.carouselPre li .bgImg{
+    width: 100%;
+    height: 100%;
+}
+
+.carouselPre li img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.scrolly{
+    position: relative;
+}
+
+#left,#right{
+    background-color: rgba(255, 255, 255, 0.9);
+    outline: none;
+    border: transparent;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-60%);
+    cursor: pointer;
+    z-index: 2;
+}
+
+#left{
+    left: 0;
+}
+
+#right{
+    right: 0;
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .carouselPre {
+        grid-auto-columns: calc((100% - 2 * 10px)/ 8);
+        height: 5.5rem;
+    }
+  }
+
+@media (min-width: 1201px) and (max-width: 1430px) {
+    .carouselPre {
+        grid-auto-columns: calc((100% - 2 * 10px)/ 10);
+        height: 5.5rem;
+    }
+}
+
+@media (min-width: 661px) and (max-width: 991px) {
+    .carouselPre {
+        grid-auto-columns: calc((100% - 2 * 10px)/ 10);
+        height: 5.5rem;
+    }
+  }
+
+@media (min-width: 441px) and (max-width: 660px) {
+    .carouselPre {
+        grid-auto-columns: calc((100% - 1 * 10px)/ 8);
+        height: 5.5rem;
+    }
+  }
+
+@media only screen and (max-width: 440px) {
+    .carouselPre {
+            grid-auto-columns: 20%;
+            height: 5.5rem;
+    }
+  }
+
+
+.carouselPre::-webkit-scrollbar {    
+    width: 15px;
+    height: 15px;
+/*border-left: #ededed solid 1px;*/
+/*background-color: #fcfcfc;*/
+/*border-top: #ededed solid 1px;*/
+}
+
+.carouselPre::-webkit-scrollbar-thumb:hover{
+    cursor: pointer;
+    background: #c7c7c7;
+    width: 15px;
+    background-clip: content-box;
+    border: 4px solid transparent;
+    border-radius: 10px;
+    display: none;
+}
+
+.carouselPre::-webkit-scrollbar-button {   
+    display: none;
+}
+
+.carouselPre::-webkit-scrollbar-thumb {
+    background: #dbdbdb;
+    background-clip: content-box;
+    border: 4px solid transparent;
+    border-radius: 10px;
+    display: none;
+}
+
+
+
+</style>
+
+<script>
+    outtester = document.getElementsByClassName('scrolly');
+    for(var i = 0; i < outtester.length; i++){
+    scrollification('scrolly', setyup = {
+        i: i,
+        scrollCont: '.carouselPre', 
+        itemsScroll: '.itemsC',
+        customButtons: true, 
+        butLeft: '#left', 
+        butRight: '#right'})
+    }
+    function scrollification(mainConter ,setyup = {i, scrollcont, itemsScroll, customButtons, butLeft, butRight}){
+        if(setyup.i == null){
+            out = document.getElementsByClassName(mainConter)[0];
+        }else{
+            out = document.getElementsByClassName(mainConter)[setyup.i];
+        }
+        
+        if(setyup.customButtons == true){
+            l = out.querySelector(setyup.butLeft);
+            r = out.querySelector(setyup.butRight);
+        }
+    
+    var out,
+    a = out.querySelector(setyup.scrollCont),l, r,
+    q =  out.querySelectorAll(setyup.itemsScroll);
+    
+    $(l).click(function(){getBack();});
+    
+    $(r).click(function(){getNext();});
+    
+    function getNext(){
+        for(var i = 0; i < q.length; i++){
+            if(q[i].getBoundingClientRect().left <= a.getBoundingClientRect().left + 50){
+                var index = q[i].offsetWidth;
+                $(a).scrollLeft($(a).scrollLeft() + index);
+            }
+        }
+    }
+    function getBack(){
+    for(var i = 1; i < q.length; i++){
+        if(q[i].getBoundingClientRect().left < a.getBoundingClientRect().left + 50){
+            var index = q[i - 1].offsetWidth;
+            $(a).scrollLeft($(a).scrollLeft() - index);}}}
+    }
+
+</script>
+<script>
+    $('.itemsC').on('click',function(){
+       var abs = $(this).parentsUntil( $( ".form" ), ".cust_swatchs" ).find('.form-radio:checked + .form-option .form-option-variant').attr("title");
+        $( this ).parentsUntil( $( ".form" ), ".cust_swatchs" ).find( ".selected_txt" ).text( abs );
+    });
+</script>

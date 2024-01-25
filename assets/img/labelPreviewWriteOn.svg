@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="largeCircleOuterSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+     <style type="text/css" >
+      <![CDATA[
+        text {
+            fill:#39BBC9;
+            font-family: Rounded;
+            vertical-align:middle;
+        }
+        tspan.fullName {
+            font-size: 45px;
+            line-height: 75px;
+        }
+        tspan.phoneNumber {
+            font-size: 40px;
+            line-height: 50px;
+        }
+      ]]>
+    </style>
+   <path id="namePath" fill="none" d="M71.384,200.218c-7.687-13.321-12.085-28.78-12.085-45.267v-0.533
+    c0-50.093,40.608-90.701,90.702-90.701c50.093,0,90.701,40.608,90.701,90.701v0.533c0,16.514-4.412,31.996-12.123,45.332"/>
+    <text text-anchor="middle">
+        <textPath xlink:href="#namePath" startOffset="50%"><tspan class="fullName">Name</tspan></textPath>
+    </text>
+    <text text-anchor="middle">
+            <textPath xlink:href="#phonePath" startOffset="50%"><tspan class="phoneNumber"></tspan></textPath>
+    </text>
+</svg>
