@@ -1,3 +1,4 @@
+$lineHeight-small: 24px;
 * {
   box-sizing: border-box;
 }
@@ -61,7 +62,8 @@ label, input {
 }
 label {
   color: #313b47;
-  font-size: $fontSize-root;
+  // font-size: $fontSize-root; // Pre-scss compiler update
+  font-size: stencilNumber("fontSize-root");
   font-weight: bold;
   text-align: center;
 }
