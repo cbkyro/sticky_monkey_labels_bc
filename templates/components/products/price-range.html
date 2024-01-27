@@ -31,7 +31,11 @@
         {{#if schema_org}}
             <meta itemprop="availability" itemtype="http://schema.org/ItemAvailability"
                     content="http://schema.org/{{#if product.pre_order}}PreOrder{{else if product.out_of_stock}}OutOfStock{{else if product.can_purchase '===' false}}OutOfStock{{else}}InStock{{/if}}">
-            <meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/{{product.condition}}Condition">
+
+            <!-- <meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/{{product.condition}}Condition"> -->
+            <!-- Google Search Console:error fix - Invalid enum value in field "NewCondition" Manually specifying item condition even if condition not enabled  -->
+            <meta itemprop="itemCondition" itemscope itemtype="https://schema.org/OfferItemCondition" content="http://schema.org/NewCondition" />
+
             <meta itemprop="priceCurrency" content="{{currency_selector.active_currency_code}}">
             <meta itemprop="url" content="{{product.url}}">
             <div itemprop="priceSpecification" itemscope itemtype="http://schema.org/PriceSpecification">
@@ -77,7 +81,11 @@
         {{#if schema_org}}
             <meta itemprop="availability" itemtype="http://schema.org/ItemAvailability"
                     content="http://schema.org/{{#if product.pre_order}}PreOrder{{else if product.out_of_stock}}OutOfStock{{else if product.can_purchase '===' false}}OutOfStock{{else}}InStock{{/if}}">
-            <meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/{{product.condition}}Condition">
+
+            <!-- <meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/{{product.condition}}Condition"> -->
+            <!-- Google Search Console:error fix - Invalid enum value in field "NewCondition" Manually specifying item condition even if condition not enabled  -->
+            <meta itemprop="itemCondition" itemscope itemtype="https://schema.org/OfferItemCondition" content="http://schema.org/NewCondition" />
+
             <meta itemprop="priceCurrency" content="{{currency_selector.active_currency_code}}">
             <meta itemprop="url" content="{{product.url}}">
             <div itemprop="priceSpecification" itemscope itemtype="http://schema.org/PriceSpecification">

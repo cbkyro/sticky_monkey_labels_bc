@@ -34,7 +34,11 @@
                         <span class="productReview-ratingNumber" itemprop="ratingValue">{{ rating }}</span>
                         </span>
                         {{#if name}}
-                            <meta itemprop="author" itemscope itemtype="http://schema.org/Person" content="{{name}}">
+                            <!-- <meta itemprop="author" itemscope itemtype="http://schema.org/Person" content="{{name}}"> -->
+                            <!-- Google Search Console:error fix - Invalid enum value in field   -->
+                            <div itemprop="author" itemtype="https://schema.org/Person">
+                                <meta itemprop="name" content="{{name}}">
+                            </div>
                             <p class="productReview-author">
                                 {{lang 'products.reviews.post_on_by' date=date name=name }}
                             </p>
